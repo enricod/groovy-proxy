@@ -19,5 +19,6 @@ class Main {
          
         userProxy.cognome = "rossi";
         println userProxy.getAzioni();
+        println userProxy.displayName();
     }
 }
