@@ -1,0 +1,22 @@
+apply plugin: 'groovy'
+apply plugin:'application'
+
+project.group = "it.enricod"
+archivesBaseName = "groovy-proxy"
+project.version = "1.0"
+// manifest.mainAttributes("Main-Class" : "it.enricod.Main")
+mainClassName = "it.enricod.Main"
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile 'org.codehaus.groovy:groovy-all:2.4.9'
+    testCompile 'junit:junit:4.12'
+}
+
+task execute(type:JavaExec) {
+   main = mainClassName
+   classpath = sourceSets.main.runtimeClasspath
+}
